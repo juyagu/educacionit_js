@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+    </head>
+
+    <body>
+
+       
+
+        <table>
+            
+            <tr>
+                <td>Nombre</td>
+                
+                <td> <input type="text" id="nombre"/></td>
+            </tr>
+            <tr>
+                
+                <td>apellido</td>
+                <td> <input type="text" id="apellido"/>  <input type="button" value="Enviar" id="boton"/></td>
+            </tr>
+           
+             
+        </table>
+        
+ <script type="text/javascript">
+        
+    $(document).ready(function() {
+        $("#boton").click(function(){
+        alert($("#nombre").val()+", "+ $("#apellido").val());
+        
+    }); 
+});
+ </script>
+    </body>
+   
+
+</html>
+

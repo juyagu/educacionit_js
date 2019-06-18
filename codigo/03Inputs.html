@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+    </head>
+
+    <body>
+
+
+
+        <table>
+
+            <tr>
+                <td>Nombre</td>
+
+                <td> <input type="text" class="texto" id="nombre"/></td>
+            </tr>
+
+            <tr>
+                <td>Select</td>
+
+                <td> <select id="seleccion">
+                        <option value="Uno">1</option>
+                        <option value="Dos">2</option>
+
+                    </select> </td>
+            </tr>
+            <tr>
+
+                <td>apellido</td>
+                <td> <input type="checkbox" class="texto"  id="tildado"/>  <input type="button" value="Enviar" id="boton"/></td>
+            </tr>
+
+
+        </table>
+        
+        <script type="text/javascript">
+
+
+            $(document).ready(function () {
+
+                $("#boton").click(function () {
+                    var nombre = $("#nombre").val();
+                    var tildado = $('#tildado').is(':checked');
+                    var seleccion = $("#seleccion option:selected").text();
+                    var valorSeleccion = $("#seleccion option:selected").val();
+                    alert(nombre + " * " + tildado + " * " + seleccion+": "+ valorSeleccion);
+
+                });
+            });
+        </script>
+    </body>
+
+
+</html>
+

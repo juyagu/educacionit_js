@@ -1,45 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <script>
-        // 1. Create a new XMLHttpRequest object
-        let xhr = new XMLHttpRequest();
-        // 2. Configure it: GET-request for the URL /article/.../load
-        xhr.open('GET', 'ajax/test.txt');
-
-        // 3. Send the request over the network
-        xhr.send();
-
-        // 4. This will be called after the response is received
-        xhr.onload = function () {
-            if (xhr.status != 200) { // analyze HTTP status of the response
-                alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-            } else { // show the result
-                alert(`Done, got ${xhr.response.length} bytes`); // responseText is the server
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
             }
-        };
-
-        xhr.onprogress = function (event) {
-            if (event.lengthComputable) {
-                alert(`Received ${event.loaded} of ${event.total} bytes`);
-            } else {
-                alert(`Received ${event.loaded} bytes`); // no Content-Length
-            }
-
-        };
-
-        xhr.onerror = function () {
-            alert("Request failed");
-        };
-    </script>
-</body>
-
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <ul class="nav navbar-nav">
+                <li class="active"><a id="id_selector" href="#">Selector ID</span></a></li>
+                <li><a id="css_selector" href="#">CSS</a></li>
+                <li><a id="inputs" href="#">Inputs</a></li>
+                <li><a id="toogle_ex" href="#">Toogle</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div id="main"></div>
+        </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    </body>
 </html>
